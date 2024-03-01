@@ -127,8 +127,8 @@ function MynavComponent() {
               <span>&nbsp;Become a Seller</span>
             </div>
           </div>
-          <div className="drop-down nav">
-            <div className="drop-down1" aria-hidden="true">
+          <div className="dropdown nav">
+            <div className="dropbtn2" aria-hidden="true">
               <a
                 title="Dropdown with more help links"
                 aria-haspopup="true"
@@ -143,7 +143,51 @@ function MynavComponent() {
                 />
               </a>
             </div>
+            <div className="dropdown-content right-0">
+              <a href="#" className="sublinks">
+                <img
+                  className="li-img"
+                  src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/notificationPreferences-cfffaf.svg"
+                  alt="24x7 Customer Care"
+                  width="24"
+                  height="24"
+                />
+                Notification
+              </a>
+              <a href="#" className="sublinks">
+                <img
+                  className="li-img"
+                  src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/helpcenter-7d90c0.svg"
+                  alt="Ad-free Experience"
+                  width="24"
+                  height="24"
+                />
+                24x7 Customer Care
+              </a>
+              <a href="#" className="sublinks">
+                <img
+                  className="li-img"
+                  src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/advertise-298691.svg"
+                  alt="Return Order"
+                  width="24"
+                  height="24"
+                />
+                Advertise
+              </a>
+              <a href="#" className="sublinks">
+                <img
+                  className="li-img"
+                  src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/downloadApp-2ea657.svg"
+                  alt="Save For Later"
+                  width="24"
+                  height="24"
+                />
+                Download App
+              </a>
+            </div>
           </div>
+
+          
         </div>
       </nav>
     </div>
