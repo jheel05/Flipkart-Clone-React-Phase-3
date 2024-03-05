@@ -1,8 +1,8 @@
-import '../assets/navbar.css';
+import '../Navbar/navbar.css';
 
-function MynavComponent() {
+function Navbar() {
   return (
-    <div>
+    <div className=''> 
       <nav className="topnav">
         <div className="wrap">
           <img
@@ -27,7 +27,8 @@ function MynavComponent() {
                 type="text"
                 placeholder="Search for Products, Brands and More"
                 id="search"
-                onInput="debouncedSearch(event)"
+                
+                // onInput="debouncedSearch(event)"
                 className="input-srch"
               />
             </div>
@@ -46,7 +47,7 @@ function MynavComponent() {
             </a>
             <div className="dropdown-content">
               <a href="#" title="Sign Up" className="sublinks border-b border-gray-300">
-                <span>New customer?</span><span className="sign-up text-blue-700 float-right"> Sign Up</span></a>
+                <span>New customer?</span><span className="sign-up text-blue-700 float-right font-bold"> Sign Up</span></a>
               <a href="assets/Pages/form.html" className="sublinks">
                 <img
                   className="li-img"
@@ -194,4 +195,4 @@ function MynavComponent() {
   );
 }
 
-export default MynavComponent;
+export default Navbar;

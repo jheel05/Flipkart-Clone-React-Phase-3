@@ -1,5 +1,5 @@
 
-import '../assets/footer.css';
+import '../Footer/footer.css';
 
 function Footer() {
     return (

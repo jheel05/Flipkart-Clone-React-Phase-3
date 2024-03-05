@@ -1,21 +1,11 @@
-import Footer from './components/footer.jsx'
-import Slider from './components/imageslider.jsx'
-import CategoriesBar from './components/categoriesbar.jsx'
-import MynavComponent from './components/navbar.jsx'
-import './App.css'
+import LandingPage from './pages/landingpage.jsx'
 
 function App() {
 
 
   return (
     <>
-    <MynavComponent />
-    
-    <CategoriesBar />
-    <Slider />
-    <Footer />
-      
-      
+    <LandingPage />
     </>
   )
 }
