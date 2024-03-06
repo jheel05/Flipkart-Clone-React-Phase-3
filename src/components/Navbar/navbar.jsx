@@ -1,8 +1,48 @@
-import '../Navbar/navbar.css';
+import "../Navbar/navbar.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [searchResults, setSearchResults] = useState([]);
+
+  const fetchData = (query) => {
+    return fetch(`https://dummyjson.com/products/search?q=${query}`)
+      .then((response) => response.json())
+      .catch((error) => console.error("Error fetching data:", error));
+  };
+
+  const displayResults = (results) => {
+    setSearchResults(results.products);
+  };
+
+  const selectSuggestion = (selectedSuggestion) => {
+    document.getElementById("search").value = selectedSuggestion;
+    setSearchResults([]);
+  };
+
+  const debouncedSearch = (event) => {
+    const query = event.target.value;
+    debounce(() => {
+      if (query.trim() !== "") {
+        fetchData(query).then(displayResults);
+      } else {
+        setSearchResults([]);
+      }
+    }, 1000)();
+  };
+
+  const debounce = (fn, delay) => {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        fn.apply(this, args);
+      }, delay);
+    };
+  };
+
   return (
-    <div className=''> 
+    <div className="">
       <nav className="topnav">
         <div className="wrap">
           <img
@@ -13,30 +53,52 @@ function Navbar() {
           <div className="nav">
             <div className="search nav-title">
               <button className="search-btn">
-                <svg width="24" height="24" className="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  width="24"
+                  height="24"
+                  className=""
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <title>Search Icon</title>
                   <path
                     d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
-                    stroke="#717478" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"></path>
-                  <path d="M16 16L21 21" stroke="#717478" strokeWidth="1.4" strokeLinecap="round"
-                    strokeLinejoin="round">
-                  </path>
+                    stroke="#717478"
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                  <path
+                    d="M16 16L21 21"
+                    stroke="#717478"
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
                 </svg>
               </button>
               <input
                 type="text"
                 placeholder="Search for Products, Brands and More"
                 id="search"
-                
-                // onInput="debouncedSearch(event)"
+                onChange={debouncedSearch}
                 className="input-srch"
               />
             </div>
-            <ul id="searchResults"></ul>
-            <script src="assets/JS/searchbox.js"></script>
+            <ul id="searchResults">
+              {searchResults.map((result) => (
+                <li
+                  key={result.id}
+                  onClick={() => selectSuggestion(result.title)}
+                >
+                  {result.title}
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="dropdown nav">
-            <a className="link" href="otplogin.html">
+            <Link to="/Login">
               <button className="dropbtn">
                 <img
                   className="dropbtnimg"
@@ -44,10 +106,20 @@ function Navbar() {
                 />
                 &nbsp; Login
               </button>
-            </a>
+            </Link>
+
             <div className="dropdown-content">
-              <a href="#" title="Sign Up" className="sublinks border-b border-gray-300">
-                <span>New customer?</span><span className="sign-up text-blue-700 float-right font-bold"> Sign Up</span></a>
+              <a
+                href="#"
+                title="Sign Up"
+                className="sublinks border-b border-gray-300"
+              >
+                <span>New customer?</span>
+                <span className="sign-up text-blue-700 float-right font-bold">
+                  {" "}
+                  Sign Up
+                </span>
+              </a>
               <a href="assets/Pages/form.html" className="sublinks">
                 <img
                   className="li-img"
@@ -110,7 +182,7 @@ function Navbar() {
               </a>
             </div>
           </div>
-          <div className='nav '>
+          <div className="nav ">
             <div className="Cart">
               <img
                 src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"
@@ -119,8 +191,8 @@ function Navbar() {
               <span>&nbsp;Cart</span>
             </div>
           </div>
-          <div className='nav'>
-          <div className="Seller">
+          <div className="nav">
+            <div className="Seller">
               <img
                 src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/Store-9eeae2.svg"
                 alt="Store"
@@ -187,8 +259,6 @@ function Navbar() {
               </a>
             </div>
           </div>
-
-          
         </div>
       </nav>
     </div>

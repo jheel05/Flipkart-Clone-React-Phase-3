@@ -1,106 +1,131 @@
-
-import '../Footer/footer.css';
+import "../Footer/footer.css";
+import Anchor from "../AnchorTag/AnchorTag";
 
 function Footer() {
-    return (
-    <footer className='mt-4'>
+  return (
+    <footer className="mt-4">
       <div id="footer">
         <div>
           <li className="heading">ABOUT</li>
           <li>
-            <a
+            <Anchor
               href="https://corporate.flipkart.net/corporate-home"
               target="_blank"
-              >About Us</a
             >
+              About Us
+            </Anchor>
           </li>
           <li>
-            <a
+            <Anchor
               href="https://www.flipkartcareers.com/?otracker=${otracker}_navlinks"
               target="_blank"
-              >Career</a
             >
+              Career
+            </Anchor>
           </li>
           <li>
-            <a href="http://stories.flipkart.com/" target="_blank"
-              >Flipkart Stories</a
-            >
+            <Anchor href="http://stories.flipkart.com/" target="_blank">
+              {" "}
+              Flipkart Stories
+            </Anchor>
           </li>
           <li>
-            <a href="https://www.cleartrip.com/" target="_blank">Cleartrip</a>
+            <Anchor href="https://www.cleartrip.com/" target="_blank">
+              Cleartrip
+            </Anchor>
           </li>
         </div>
         <div>
           <li className="heading">GROUP COMPANIES</li>
           <li>
-            <a href="https://www.myntra.com/" target="_blank">Myntra</a>
+            <Anchor href="https://www.myntra.com/" target="_blank">
+              Myntra
+            </Anchor>
           </li>
           <li>
-            <a href="https://www.flipkartwholesale.com/" target="_blank"
-              >Flipkart Wholesale</a
-            >
+            <Anchor href="https://www.flipkartwholesale.com/" target="_blank">
+              Flipkart Wholesale
+            </Anchor>
           </li>
-          <li><a href="https://www.shopsy.in/" target="_blank">shopsy</a></li>
           <li>
-            <a href="https://www.cleartrip.com/" target="_blank">Cleartrip</a>
+            <Anchor href="https://www.shopsy.in/" target="_blank">
+              Shopsy
+            </Anchor>
+          </li>
+          <li>
+            <Anchor href="https://www.cleartrip.com/" target="_blank">
+              Cleartrip
+            </Anchor>
           </li>
         </div>
         <div>
           <li className="heading">HELP</li>
           <li>
-            <a href="https://www.flipkart.com/pages/payments" target="_blank"
-              >Payments</a
-            >
-          </li>
-          <li>
-            <a href="https://www.flipkart.com/pages/shipping" target="_blank"
-              >Shipping</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.flipkart.com/helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG"
+            <Anchor
+              href="https://www.flipkart.com/pages/payments"
               target="_blank"
-              >FAQs</a
             >
+              Payments
+            </Anchor>
           </li>
           <li>
-            <a
+            <Anchor
+              href="https://www.flipkart.com/pages/shipping"
+              target="_blank"
+            >
+              Shipping
+            </Anchor>
+          </li>
+          <li>
+            <Anchor
               href="https://www.flipkart.com/helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG"
               target="_blank"
-              >Cancellation and Returns</a
             >
+              Cancellation & Returns
+            </Anchor>
+          </li>
+          <li>
+            <Anchor
+              href="https://www.flipkart.com/helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG"
+              target="_blank"
+            >
+              FAQs
+            </Anchor>
           </li>
         </div>
         <div className="mid">
           <li className="heading">CONUSMER POLICY</li>
           <li>
-            <a
-              href="https://www.flipkart.com/pages/terms?otracker=${otracker}_navlinks"
+            <Anchor
+              href="https://www.flipkart.com/pages/returnpolicy?otracker=${otracker}_navlinks"
               target="_blank"
-              >Terms of Use</a
             >
+              Terms of Use
+            </Anchor>
           </li>
           <li>
-            <a
-              href="https://www.flipkart.com/pages/paymentsecurity?otracker=${otracker}_navlinks"
+            <Anchor
+              href="https://www.flipkart.com/pages/returnpolicy?otracker=${otracker}_navlinks"
               target="_blank"
-              >Security</a
             >
+              Security
+            </Anchor>
           </li>
           <li>
-            <a
+            <Anchor
               href="https://www.flipkart.com/pages/privacypolicy?otracker=${otracker}_navlinks"
               target="_blank"
-              >Privacy</a
             >
+              Privacy
+            </Anchor>
           </li>
           <li>
-            <a
+            <Anchor
               href="https://www.flipkart.com/sitemap?otracker=${otracker}_navlinks"
               target="_blank"
-              >Site Map</a
             >
+              Sitemap
+            </Anchor>
           </li>
         </div>
 
@@ -121,12 +146,10 @@ function Footer() {
               alt="Become a Seller"
               width="13"
               height="12"
-            /><a
-              href="https://seller.flipkart.com/"
-              aria-label="Become a Seller"
-              target="_blank"
-              ><span>&nbsp;Become a Seller</span></a
-            >
+            />
+            <Anchor href="https://seller.flipkart.com/" target="_blank">
+              &nbsp;Become a Seller
+            </Anchor>
           </div>
           <div className="c4gehN">
             <img
@@ -134,12 +157,11 @@ function Footer() {
               alt="Advertise"
               width="14"
               height="14"
-            /><a
-              href="https://brands.flipkart.com"
-              aria-label="Advertise"
-              target="_blank"
-              ><span>&nbsp;Advertise</span></a
-            >
+            />
+            <Anchor href="https://brands.flipkart.com" target="_blank">
+              {" "}
+              &nbsp;Advertise
+            </Anchor>
           </div>
           <div className="c4gehN">
             <img
@@ -147,12 +169,14 @@ function Footer() {
               alt="Gift Cards"
               width="13"
               height="13"
-            /><a
+            />
+            <Anchor
               href="/the-gift-card-store?otracker=${otracker}_footer_navlinks"
-              aria-label="Gift Cards"
               target="_blank"
-              ><span>&nbsp;Gift Cards</span></a
             >
+              {" "}
+              &nbsp;Gift Cards
+            </Anchor>
           </div>
           <div className="c4gehN">
             <img
@@ -160,24 +184,27 @@ function Footer() {
               alt="Help Center"
               width="13"
               height="13"
-            /><a
+            />
+            <Anchor
               href="/helpcentre?otracker=${otracker}_footer_navlinks"
-              aria-label="Help Center"
               target="_blank"
-              ><span>&nbsp;Help Center</span></a
             >
+              {" "}
+              &nbsp;Help Center
+            </Anchor>
           </div>
-          <span className="pCGSTE"
-            >&#169; 2007-2024
-            <span>&nbsp;Flipkart.com</span></span
-          ><img
+          <span className="pCGSTE">
+            &#169; 2007-2024
+            <span>&nbsp;Flipkart.com</span>
+          </span>
+          <img
             src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
             alt="Payment methods"
           />
         </div>
       </div>
     </footer>
-    );
+  );
 }
 
 export default Footer;

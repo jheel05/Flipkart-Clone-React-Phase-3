@@ -4,197 +4,185 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f1f3f6;
 }
 
 .topnav {
-    align-items: center;
-    background-color: #ffffff;
-    height: 10%;
-  }
-  
-  .wrap {
-    padding-top: 1%;
-  }
-  
-  .logo {
-    display: block;
-    justify-content: center;
-    width: 150px;
-    margin-left: 3%;
-  }
-  
-  .nav {
-    list-style: none;
-    display: inline-block;
-    padding: 0 1%;
-    align-items: center;
-    vertical-align: middle;
-    position: relative;
-  }
-  
-  .nav-title {
-    font-size: 1.5em;
-  }
-  
-  .dropbtn {
-    background-color: #ffffff;
-    color: #000;
-    padding: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-  
-  }
-  .link{
-    text-decoration: none;
-  }
+  align-items: center;
+  background-color: #ffffff;
+  height: 10%;
+}
 
-  
- 
-  
-  .sublinks img {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 9px;
-    align-items: center;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    z-index: 1000;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    width: 280px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    font-size: 15px;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 9px 16px;
-    text-decoration: none;
-    display: block;
-    align-items: center;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #dddddd5a;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: inline-block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #2d65f2;
-    color: #fff;
-  }
-  .dropdown:hover .dropbtnimg{
-    filter: invert(99%) sepia(0%) saturate(7453%) hue-rotate(220deg) brightness(115%) contrast(97%);
-  }
-  
-  
-  
- 
-  
-  
-  .search input[type="text"] {
-    border: none;
-    width: 500px;
-    padding-bottom: 8px;
-    font-size: 18px;
-    vertical-align: middle;
-    background-color: var(--primary-color);
-    outline: var(--primary-color);
-  
-  
-  }
-  
-  .search {
-    margin-bottom: 10px;
-    align-items: center;
-    width: 800px;
-    background-color: var(--primary-color);
-    padding: 4px;
-    border-radius: 10px;
-  }
-  
-  .search button {
-    background-color: var(--primary-color);
-    color: #3f3c3c;
-    padding: 8px;
-    align-items: center;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #searchResults {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 1;
-  }
-  
-  #searchResults li {
-    padding: 10px;
-    cursor: pointer;
-  }
-  #searchResults li:hover {
-    background-color: #f5f5f5;
-  }
+.wrap {
+  padding-top: 1%;
+}
 
+.logo {
+  display: block;
+  justify-content: center;
+  width: 150px;
+  margin-left: 3%;
+}
 
-  .Cart {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-  }
-  
-  .Seller {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-  }
-  .dropbtn2{
-    background-color: #ffffff;
-    color: #000;
-    padding: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-  }
+.nav {
+  list-style: none;
+  display: inline-block;
+  padding: 0 1%;
+  align-items: center;
+  vertical-align: middle;
+  position: relative;
+}
 
-  .dropbtn2:hover {
-    border-radius: 8px;
-    border: 1px solid #9C9C9C;
-    background-color: #f5f5f5;
-  }
-  
+.nav-title {
+  font-size: 1.5em;
+}
+
+.dropbtn {
+  background-color: #ffffff;
+  color: #000;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+.link {
+  text-decoration: none;
+}
+
+.sublinks img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 9px;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  width: 280px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 9px 16px;
+  text-decoration: none;
+  display: block;
+  align-items: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #dddddd5a;
+}
+
+.dropdown:hover .dropdown-content {
+  display: inline-block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #2d65f2;
+  color: #fff;
+}
+.dropdown:hover .dropbtnimg {
+  filter: invert(99%) sepia(0%) saturate(7453%) hue-rotate(220deg)
+    brightness(115%) contrast(97%);
+}
+
+.search input[type="text"] {
+  border: none;
+  width: 500px;
+  padding-bottom: 8px;
+  font-size: 18px;
+  vertical-align: middle;
+  background-color: var(--primary-color);
+  outline: var(--primary-color);
+}
+
+.search {
+  margin-bottom: 10px;
+  align-items: center;
+  width: 800px;
+  background-color: var(--primary-color);
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.search button {
+  background-color: var(--primary-color);
+  color: #3f3c3c;
+  padding: 8px;
+  align-items: center;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#searchResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+#searchResults li {
+  padding: 10px;
+  cursor: pointer;
+}
+#searchResults li:hover {
+  background-color: #f5f5f5;
+}
+
+.Cart {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.Seller {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.dropbtn2 {
+  background-color: #ffffff;
+  color: #000;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dropbtn2:hover {
+  border-radius: 8px;
+  border: 1px solid #9c9c9c;
+  background-color: #f5f5f5;
+}
