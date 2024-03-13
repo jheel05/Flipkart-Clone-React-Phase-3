@@ -1,0 +1,10 @@
+// eslint-disable-next-line react/prop-types
+const Anchor = ({ href, target, className, children }) => {
+  return (
+    <a href={href} target={target} className={className}>
+      {children}
+    </a>
+  );
+};
+
+export default Anchor;
