@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const CartContext = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => {
   return useContext(CartContext);
 };

@@ -12,7 +12,6 @@ const CartPage = () => {
   const { cartCount, clearCart } = useCart();
   const [promoCode, setPromoCode] = useState("");
   const [discount, setDiscount] = useState(0);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handlePromoSubmit = (e) => {
