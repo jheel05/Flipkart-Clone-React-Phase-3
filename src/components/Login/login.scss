@@ -1,41 +1,90 @@
-.login-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: #ffffff;
-  margin-top: 15%;
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
 
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  .login-form {
+    width: 30rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom right, #f5f5f5, #fff);
+
+    .login-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .input-group {
+      margin-bottom: 2rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f5f5f5;
+      }
+      
+    }
+
+    .agree-terms {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #696969;
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+    .error {
+      color: red;
+      margin: 20px auto 15px auto;
+      text-align: center;
+      
+    }
   }
 
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
+  .register-link {
+    margin-top: 2rem;
 
-  .error {
-    color: red;
-    margin-bottom: 15px;
-  }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
 
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #0056b3;
+      &:hover {
+        color: #0056b3;
+      }
     }
   }
 }
+

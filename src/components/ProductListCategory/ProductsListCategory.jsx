@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
-import { fetchProducts } from "../../API/CategoryProducts/CategoryProductAPI";
-import "../ProductList/ProductsList.scss";
+import { fetchProducts } from "../../api/CategoryProducts/CategoryProductAPI";
+import "./ProductsListCategory.scss";
+import { useMemo } from "react";
+import { Link } from "react-router-dom";
 
 function ProductList() {
-  const categories = ["smartphones", "laptops", "furniture", "sunglasses"];
+  const categories = useMemo(
+    () => ["smartphones", "laptops", "sunglasses"],
+    []
+  );
   const [loading, setLoading] = useState(true);
   const [productsByCategory, setProductsByCategory] = useState({});
 
@@ -29,7 +34,7 @@ function ProductList() {
       }
     }
     fetchAllProducts();
-  }, []);
+  }, [categories]);
 
   if (loading) {
     return (
@@ -46,17 +51,21 @@ function ProductList() {
           <h2 className="category-title">Best of {categoryName}</h2>
           <div className="products">
             {productsByCategory[categoryName].map((product) => (
-              <div key={product.id} className="product">
-                <img
-                  src={product.thumbnail}
-                  alt={product.title}
-                  className="product-image"
-                />
-                <h3>{product.title}</h3>
-                <p>Price: ${product.price}</p>
-                <p>Rating: {product.rating}</p>
-                <p>Brand: {product.brand}</p>
-              </div>
+              <Link key={product.id} to={`/data/products/${product.id}`} >
+                <div className="product">
+                  <img
+                    src={product.thumbnail}
+                    alt={product.title}
+                    className="product-image"
+                  />
+                  <h3>{product.title}</h3>
+
+                  <p><span className="star-rating">
+            &#9733;
+          </span> {product.rating}</p>
+                  <p>{product.brand}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -66,3 +75,5 @@ function ProductList() {
 }
 
 export default ProductList;
+
+

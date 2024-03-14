@@ -2,6 +2,7 @@ import "../Footer/footer.css";
 import Anchor from "../AnchorTag/AnchorTag";
 
 function Footer() {
+  //TODO: 
   return (
     <footer className="mt-4">
       <div id="footer">

@@ -1,55 +1,81 @@
-import "../Navbar/navbar.css";
+import "./Header.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useContext } from "react";
+import UserContext from "../../Context/UserContext";
+import { useCart } from "../../Context/CartContext";
 
-function Navbar() {
+function Header() {
   const [searchResults, setSearchResults] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const {user, setUser, setUserdata} = useContext(UserContext);
+  const { cartCount } = useCart();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (searchQuery.trim() !== "") {
+        fetchData(searchQuery).then(displayResults);
+      } else {
+        setSearchResults([]);
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
 
   const fetchData = (query) => {
     return fetch(`https://dummyjson.com/products/search?q=${query}`)
       .then((response) => response.json())
+      .then((data) => {
+        const resultsWithQuery = [{ title: query }, ...data.products];
+        return resultsWithQuery;
+      })
       .catch((error) => console.error("Error fetching data:", error));
   };
 
   const displayResults = (results) => {
-    setSearchResults(results.products);
+    setSearchResults(results);
   };
 
   const selectSuggestion = (selectedSuggestion) => {
-    document.getElementById("search").value = selectedSuggestion;
+    setSearchQuery(selectedSuggestion);
     setSearchResults([]);
   };
-
-  const debouncedSearch = (event) => {
-    const query = event.target.value;
-    debounce(() => {
-      if (query.trim() !== "") {
-        fetchData(query).then(displayResults);
-      } else {
-        setSearchResults([]);
-      }
-    }, 1000)();
+  
+  const handleItemClick = (event) => {
+    if (event.target.tagName === "LI") {
+      const selectedSuggestion = event.target.textContent;
+      selectSuggestion(selectedSuggestion);   
+    }
   };
 
-  const debounce = (fn, delay) => {
-    let timer;
-    return function (...args) {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        fn.apply(this, args);
-      }, delay);
-    };
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
   };
 
+ 
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); 
+    localStorage.removeItem("data");
+    setUser(null);
+    setUserdata(null);
+    
+    
+  };
+  
   return (
-    <div className="">
+    <div className="sticky-header">
       <nav className="topnav">
         <div className="wrap">
-          <img
-            className="logo nav nav-title"
-            src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus_mobile-39120d.svg"
-            alt="Flipkart Logo"
-          />
+          <Link to="/">
+            <img
+              className="logo nav nav-title"
+              src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus_mobile-39120d.svg"
+              alt="Flipkart Logo"
+            />
+          </Link>
           <div className="nav">
             <div className="search nav-title">
               <button className="search-btn">
@@ -82,34 +108,41 @@ function Navbar() {
                 type="text"
                 placeholder="Search for Products, Brands and More"
                 id="search"
-                onChange={debouncedSearch}
+                onChange={handleSearch}
                 className="input-srch"
               />
             </div>
-            <ul id="searchResults">
+            <ul id="searchResults" onClick={handleItemClick}>
               {searchResults.map((result) => (
-                <li
-                  key={result.id}
-                  onClick={() => selectSuggestion(result.title)}
-                >
-                  {result.title}
-                </li>
+                <Link to={`/products/${result.title}`} key={result.id}>
+                  <li>{result.title}</li>
+                </Link>
               ))}
             </ul>
           </div>
           <div className="dropdown nav">
-            <Link to="/Login">
-              <button className="dropbtn">
+            {!user ? (
+              <Link to="/Login">
+                <button className="dropbtn">
+                  <img
+                    className="dropbtnimg"
+                    src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg"
+                  />
+                  &nbsp; Login
+                </button>
+              </Link>
+            ) : (
+              <Link to="/Profile"><button className="dropbtn" >
                 <img
                   className="dropbtnimg"
                   src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg"
                 />
-                &nbsp; Login
-              </button>
-            </Link>
+                &nbsp;My Account
+              </button></Link>
+            )}
 
             <div className="dropdown-content">
-              <a
+            {!user ? (<a
                 href="#"
                 title="Sign Up"
                 className="sublinks border-b border-gray-300"
@@ -119,17 +152,17 @@ function Navbar() {
                   {" "}
                   Sign Up
                 </span>
-              </a>
-              <a href="assets/Pages/form.html" className="sublinks">
+              </a>) :(<a href="" className="sublinks" onClick={handleLogout}>
                 <img
                   className="li-img"
-                  src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg"
+                  src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/logout-e63ddf.svg"
                   alt="My Profile"
                   width="24"
                   height="24"
                 />
-                My Profile
-              </a>
+                Logout
+              </a>)}
+              
               <a href="#" className="sublinks">
                 <img
                   className="li-img"
@@ -180,16 +213,19 @@ function Navbar() {
                 />
                 Gift Cards
               </a>
+              
             </div>
           </div>
           <div className="nav ">
-            <div className="Cart">
-              <img
-                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"
-                alt="Cart"
-              />
-              <span>&nbsp;Cart</span>
-            </div>
+            <Link to="/Cart">
+              <div className="Cart">
+                <img
+                  src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"
+                  alt="Cart"
+                />
+                <span>&nbsp;Cart</span> {user ? (cartCount > 0 && <span className="cart-badge">{cartCount}</span>) : null}
+              </div>
+            </Link>
           </div>
           <div className="nav">
             <div className="Seller">
@@ -265,4 +301,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Header;
