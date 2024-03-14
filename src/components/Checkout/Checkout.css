@@ -1,0 +1,119 @@
+
+.checkout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.checkout-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  width: 60%;
+  background-color: #fff;
+  margin: 2rem;
+  padding: 100px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.payment-method-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-method-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.submit-button {
+  padding:  5px;
+  background-color: #007bff;
+  align-text: center;
+  width: 100px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirmation-container {
+  text-align: center;
+  width: 40%;
+  background-color: #fff;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+.confirmation-container h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.confirm-button {
+
+  padding: 0.5rem 2rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.order-placed-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 4px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.order-placed-animation h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-top: 2em;
+  color: #00A812;
+}
+
+.order-placed-animation img {
+  width: 180px;
+  height: 150px;
+  margin-bottom: 1rem;
+}
+.home-btn{
+  padding: 0.5rem 2rem;
+  background-color: #00A812;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 2rem;
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

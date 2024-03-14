@@ -1,6 +1,6 @@
 import Slider from "../components/ImageSlider/imageslider.jsx";
 import CategoriesBar from "../components/CategoryBar/categoriesbar.jsx";
-import ProductList from "../components/ProductList/ProductsList.jsx";
+import ProductList from "../components/ProductListCategory/ProductsListCategory.jsx";
 
 const LandingPage = () => {
   return (

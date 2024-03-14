@@ -1,11 +1,11 @@
-import Navbar from "./components/Navbar/navbar";
+import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/footer.jsx";
 import { Outlet } from "react-router-dom";
 
 function Layout() {
   return (
     <>
-      <Navbar />
+      <Header />
       <Outlet />
       <Footer />
     </>

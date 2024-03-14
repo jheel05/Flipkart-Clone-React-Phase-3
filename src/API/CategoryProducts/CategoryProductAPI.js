@@ -1,5 +1,3 @@
-// api.js
-
 export async function fetchProducts(categoryName) {
   const response = await fetch(
     `https://dummyjson.com/products/category/${categoryName}`
