@@ -153,7 +153,6 @@
   border: 1px solid #f58551;
   border-radius: 2rem 0 0 2rem;
   outline: none;
-  position: relative;
 }
 
 .Promo:hover > input {
@@ -173,9 +172,4 @@
   border-color: #16cc5c;
   background-color: #16cc5c;
 }
-.error {
-  position: absolute;
-  margin-top: 90px;
-  color: red;
-  font-size: 12px;
-}
+
